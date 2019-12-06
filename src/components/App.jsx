@@ -19,18 +19,19 @@ function App() {
     ]);
   }
 
+  function deleteItem() {}
+
   return (
     <div className="App">
-      <input
-        onChange={handleChange}
-        type="text"
-        // placeholder="What's your name?"
-        value={task}
-      />
+      <h1>To-do List App</h1>
+      <input onChange={handleChange} type="text" value={task} />
       <button onClick={addItem}>Add Task </button>
       <ol>
         {items.map(item => (
-          <li key={item.id}>{item.value}</li>
+          <li key={item.id}>
+            {item.value}
+            <button onClick={deleteItem}>Delete</button>
+          </li>
         ))}
       </ol>
     </div>
