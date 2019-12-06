@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 function App() {
-  const [name, setName] = useState("");
+  const [task, setTask] = useState("");
   const [items, setItems] = useState([]);
 
   function handleChange(event) {
     const newName = event.target.value;
-    setName(newName);
+    setTask(newName);
   }
 
   function addItem() {
@@ -14,7 +14,7 @@ function App() {
       ...items,
       {
         id: items.length,
-        value: { name }
+        value: task
       }
     ]);
   }
@@ -25,7 +25,7 @@ function App() {
         onChange={handleChange}
         type="text"
         // placeholder="What's your name?"
-        value={name}
+        value={task}
       />
       <button onClick={addItem}>Add Task </button>
       <ol>
